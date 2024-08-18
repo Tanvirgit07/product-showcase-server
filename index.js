@@ -38,7 +38,7 @@ async function run() {
       res.send({ token });
     });
 
-    
+
 
     // Middleware to verify JWT
     const verifyToken = (req, res, next) => {
@@ -68,6 +68,8 @@ async function run() {
         next();
       });
     };
+
+    
 
     app.put("/user", async (req, res) => {
       const user = req.body;
