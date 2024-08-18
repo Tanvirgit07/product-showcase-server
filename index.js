@@ -28,7 +28,7 @@ async function run() {
     const usersCollection = database.collection("users");
     const itemsCollection = database.collection("items");
 
-    
+
 
     app.post("/jwt", async (req, res) => {
       const user = req.body;
@@ -37,6 +37,8 @@ async function run() {
       });
       res.send({ token });
     });
+
+    
 
     // Middleware to verify JWT
     const verifyToken = (req, res, next) => {
