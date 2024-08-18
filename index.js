@@ -94,44 +94,6 @@ async function run() {
 
 
 
-    // app.get("/all-product", async (req, res) => {
-    //   const page = parseInt(req.query.page) || 1;
-    //   const limit = parseInt(req.query.limit) || 10;
-    
-    //   const brand = req.query.brand || '';
-    //   const category = req.query.category || '';
-    //   const minPrice = parseFloat(req.query.minPrice) || 0;
-    //   const maxPrice = parseFloat(req.query.maxPrice) || Infinity;
-    //   const searchQuery = req.query.search || '';
-    
-    //   const skip = (page - 1) * limit;
-    
-    //   const filterCondition = {
-    //     ...(brand && { brand: { $regex: brand, $options: "i" } }),
-    //     ...(category && { category: { $regex: category, $options: "i" } }),
-    //     price: { $gte: minPrice, $lte: maxPrice },
-    //     ...(searchQuery && { name: { $regex: searchQuery, $options: "i" } }),
-    //   };
-    
-    //   const totalItems = await itemsCollection.countDocuments(filterCondition);
-    //   const totalPages = Math.ceil(totalItems / limit);
-    
-    //   const result = await itemsCollection
-    //     .find(filterCondition)
-    //     .skip(skip)
-    //     .limit(limit)
-    //     .toArray();
-    
-    //   res.send({
-    //     products: result,
-    //     currentPage: page,
-    //     totalPages,
-    //     totalItems,
-    //   });
-    // });
-
-
-
     app.get("/all-product", async (req, res) => {
       const page = parseInt(req.query.page) || 1;
       const limit = parseInt(req.query.limit) || 8;
